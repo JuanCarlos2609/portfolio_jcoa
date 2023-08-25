@@ -11,12 +11,12 @@ const FullScreenLayout = ({ children }: Props) => {
   const style = StylesFullScreenLAyout;
 
   return (
-    <>
+    <Box component="div" sx={style.container}>
       <Header />
-      <Box component='div' sx={style.container}>
+      <Box component='div' sx={style.contentRender}>
         {children}
       </Box>
-    </>
+    </Box>
   );
 };
 

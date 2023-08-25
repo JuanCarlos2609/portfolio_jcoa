@@ -1,6 +1,12 @@
 export const StylesFullScreenLAyout = {
   container: {
-    marginTop: '110px',
-    padding: '10px',
+    minHeight: '100vh',
+  },
+  contentRender: {
+    minHeight: '100vh',
+    display: 'flex',
+    justifyContent: 'center',
+    paddingLeft: { xs: '10px', sm: '30px' },
+    paddingRight: { xs: '10px', sm: '30px' },
   },
 };

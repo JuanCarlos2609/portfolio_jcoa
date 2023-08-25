@@ -1,31 +1,44 @@
-import { AppBar, Box, Stack, Toolbar, Typography } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  IconButton,
+  Stack,
+  Toolbar,
+  Typography,
+} from '@mui/material';
+import { Menu } from '@mui/icons-material';
 import { LanguageSelector } from '../Language';
 import { Theme } from '../Theme';
+import { useTranslation } from '@translations';
+import { HeaderStyles } from './HeaderStyles';
 
 const Header = () => {
+  const style = HeaderStyles;
+  const { t } = useTranslation();
+
   return (
-    <AppBar position='fixed'>
-      <Toolbar
-        style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-        }}
-      >
-        <Typography
-          variant='h5'
-          style={{ fontWeight: 700, letterSpacing: '1px' }}
-        >
-          Portafolio
-        </Typography>
-        <Box style={{ display: 'flex' }}>
-          <Stack spacing={2} direction='row'>
-            <LanguageSelector />
-            <Theme />
-          </Stack>
-        </Box>
-      </Toolbar>
-    </AppBar>
+    <Box component='div' sx={style.container}>
+      <AppBar position='fixed' color='default'>
+        <Toolbar sx={style.tootlbar}>
+          <Typography
+            variant='h5'
+            style={{ fontWeight: 700, letterSpacing: '1px' }}>
+            {t('header.titleHeader')}
+          </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+            <Stack spacing={2} direction='row'>
+              <LanguageSelector />
+              <Theme />
+            </Stack>
+          </Box>
+          <Box sx={{ display: { sx: 'flex', sm: 'none' } }}>
+            <IconButton>
+              <Menu />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 };
 
