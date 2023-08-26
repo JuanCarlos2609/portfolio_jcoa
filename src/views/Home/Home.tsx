@@ -9,13 +9,21 @@ import {
   Tooltip,
   useMediaQuery,
   useTheme,
-  Grow,
+  Fab,
 } from '@mui/material';
-import { Download, LinkedIn, GitHub, Facebook } from '@mui/icons-material';
+import {
+  Download,
+  LinkedIn,
+  GitHub,
+  Facebook,
+  KeyboardArrowUp,
+} from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
 import { useTranslation } from '@translations';
 import { useEffect, useState } from 'react';
 import { Items } from './type';
+import { AboutMe } from '../AboutMe';
+import { ScrollTop } from '../../components/ScrollTop';
 
 const Home = () => {
   const theme = useTheme();
@@ -47,26 +55,27 @@ const Home = () => {
   ];
 
   return (
-    <Grid container spacing={2} sx={style.container}>
-      {matches && (
-        <Grid item xs={12} md={6} sx={style.contentItem}>
-          <Slide direction='down' in={show} timeout={1000}>
-            <Avatar sx={style.avatar} />
-          </Slide>
+    <div style={{ flexDirection: 'column', paddingBottom: '20px' }}>
+      <Grid container spacing={2} sx={style.container}>
+        {matches && (
+          <Grid item xs={12} md={6} sx={style.contentItem}>
+            <Slide direction='down' in={show} timeout={1000}>
+              <Avatar sx={style.avatar} />
+            </Slide>
 
-          <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
-            {Items.map((item) => (
-              <Tooltip key={item.name} title={item.name}>
-                <IconButton component='a' target='_blank' href={item.path}>
-                  {item.icon}
-                </IconButton>
-              </Tooltip>
-            ))}
-          </Stack>
-        </Grid>
-      )}
-      <Grid item xs={12} md={6} sx={style.contentItem}>
-        <Grid sx={{ m: '10px' }}>
+            <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
+              {Items.map((item) => (
+                <Tooltip key={item.name} title={item.name}>
+                  <IconButton component='a' target='_blank' href={item.path}>
+                    {item.icon}
+                  </IconButton>
+                </Tooltip>
+              ))}
+            </Stack>
+          </Grid>
+        )}
+        <Grid item xs={12} md={6} sx={style.contentItem}>
+          <Grid sx={{ m: '10px' }}>
             <Typography variant='h2' sx={style.principalText}>
               {t('home.greeting')}, {t('home.iam')}
             </Typography>
@@ -98,29 +107,41 @@ const Home = () => {
               >
                 {t('home.downloadCv')}
               </Button>
-              <Button variant='contained'>Sobre mí</Button>
+              <Button variant='contained' href='#aboutMe'>
+                {t('home.aboutMe')}
+              </Button>
             </Stack>
+          </Grid>
         </Grid>
+
+        {!matches && (
+          <Grid item xs={12} md={6} sx={style.contentItem}>
+            <Slide direction='down' in={show} timeout={1000}>
+              <Avatar sx={style.avatar} />
+            </Slide>
+
+            <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
+              {Items.map((item) => (
+                <Tooltip key={item.name} title={item.name}>
+                  <IconButton component='a' target='_blank' href={item.path}>
+                    {item.icon}
+                  </IconButton>
+                </Tooltip>
+              ))}
+            </Stack>
+          </Grid>
+        )}
       </Grid>
 
-      {!matches && (
-        <Grid item xs={12} md={6} sx={style.contentItem}>
-          <Slide direction='down' in={show} timeout={1000}>
-            <Avatar sx={style.avatar} />
-          </Slide>
-
-          <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
-            {Items.map((item) => (
-              <Tooltip key={item.name} title={item.name}>
-                <IconButton component='a' target='_blank' href={item.path}>
-                  {item.icon}
-                </IconButton>
-              </Tooltip>
-            ))}
-          </Stack>
-        </Grid>
-      )}
-    </Grid>
+      <div id='aboutMe'>
+        <AboutMe />
+        <ScrollTop>
+          <Fab color='primary' size='small' aria-label='scroll back to top'>
+            <KeyboardArrowUp />
+          </Fab>
+        </ScrollTop>
+      </div>
+    </div>
   );
 };
 

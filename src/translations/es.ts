@@ -14,6 +14,10 @@ export const es = {
     greeting: 'Hola',
     iam: 'Soy Juan Carlos Orta',
     profession: 'Desarrollador Frontend',
-    downloadCv: 'Descargar CV'
+    downloadCv: 'Descargar CV',
+    aboutMe: 'Sobre mí'
+  },
+  aboutMe: {
+    title: 'Sobre mí'
   }
 };

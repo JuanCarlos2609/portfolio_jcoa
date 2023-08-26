@@ -15,5 +15,9 @@ export const en = {
     iam: `I'am Juan Carlos Orta`,
     profession: 'Frontend Developer',
     downloadCv: 'Download CV',
+    aboutMe: 'About Me'
   },
+  aboutMe: {
+    title: 'About Me'
+  }
 };
