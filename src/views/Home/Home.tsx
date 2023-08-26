@@ -55,7 +55,7 @@ const Home = () => {
   ];
 
   return (
-    <div style={{ flexDirection: 'column', paddingBottom: '20px' }}>
+    <div style={{ flexDirection: 'column'}}>
       <Grid container spacing={2} sx={style.container}>
         {matches && (
           <Grid item xs={12} md={6} sx={style.contentItem}>
@@ -96,7 +96,7 @@ const Home = () => {
               en mi profesión.
             </Typography>
 
-            <Stack direction='row' spacing={2} sx={{ marginTop: '40px' }}>
+            <Stack direction='row' spacing={2} sx={style.actionButtons}>
               <Button
                 variant='outlined'
                 endIcon={<Download />}
@@ -133,14 +133,14 @@ const Home = () => {
         )}
       </Grid>
 
-      <div id='aboutMe'>
+      {/* <div id='aboutMe'>
         <AboutMe />
         <ScrollTop>
           <Fab color='primary' size='small' aria-label='scroll back to top'>
             <KeyboardArrowUp />
           </Fab>
         </ScrollTop>
-      </div>
+      </div> */}
     </div>
   );
 };

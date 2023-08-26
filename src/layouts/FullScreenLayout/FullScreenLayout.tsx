@@ -1,14 +1,16 @@
 import { ReactNode, useEffect } from 'react';
-import { Box } from '@mui/material';
+import { AppBar, Box, Toolbar } from '@mui/material';
 import { Header } from '../../components/Header';
 import { StylesFullScreenLAyout } from './StylesFullScreenLayout';
+import { LanguageSelector } from '../../components/Language';
+import { Theme } from '../../components/Theme';
 
 interface Props {
   children: ReactNode;
 }
 
 const FullScreenLayout = ({ children }: Props) => {
-  const style = StylesFullScreenLAyout;
+  const style = StylesFullScreenLAyout();
 
   // useEffect(() => {
   //   window.onbeforeunload = () => {
@@ -21,9 +23,10 @@ const FullScreenLayout = ({ children }: Props) => {
   // }, []);
 
   return (
-    <Box component='div' sx={style.container}>
+    <Box component='div' sx={style.container} style={{}}>
       <Header />
-      <Box component='div' sx={style.contentRender}>
+
+      <Box component='div' sx={style.render}>
         {children}
       </Box>
     </Box>

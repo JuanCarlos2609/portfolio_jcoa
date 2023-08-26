@@ -19,10 +19,10 @@ const Header = () => {
   return (
     <Box component='div' sx={style.container}>
       <AppBar position='fixed' color='default'>
-        <Toolbar sx={style.tootlbar}>
+        <Toolbar sx={style.toolbar}>
           <Typography
             variant='h5'
-            style={{ fontWeight: 700, letterSpacing: '1px' }}>
+            sx={{ fontWeight: 700, letterSpacing: '1px' }}>
             {t('header.titleHeader')}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>

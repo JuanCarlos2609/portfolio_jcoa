@@ -4,8 +4,9 @@ export const useHomeStyles = () => {
   const theme = useTheme();
 
   const container = {
-    minHeight: '100vh',
+    minHeight: '95vh', //80-90vh
     marginTop: { xs: '100px', lg: '0px' },
+    display: 'flex',
   };
 
   const contentItem = {
@@ -19,6 +20,8 @@ export const useHomeStyles = () => {
     fontWeight: 'bold',
     letterSpacing: '1.5px',
     fontSize: { xs: '30px', sm: '40px', md: '60px' },
+    textAlign: { xs: 'center', md: 'start' },
+    mt: { xs: '30px', md: '0px' },
   };
 
   const professionText = {
@@ -26,6 +29,7 @@ export const useHomeStyles = () => {
     fontWeight: 600,
     letterSpacing: '1px',
     fontSize: { xs: '20px', sm: '30px', md: '40px' },
+    textAlign: { xs: 'center', md: 'start' },
   };
 
   const objetiveText = {
@@ -33,6 +37,12 @@ export const useHomeStyles = () => {
     letterSpacing: '0.5px',
     fontWeight: 400,
     fontSize: { xs: '15px', sm: '18px', md: '20px' },
+  };
+
+  const actionButtons = {
+    display: 'flex',
+    justifyContent: {xs: 'center', md: 'start'},
+    mt: '40px'
   };
 
   const avatar = {
@@ -55,6 +65,7 @@ export const useHomeStyles = () => {
     principalText,
     professionText,
     objetiveText,
+    actionButtons,
     avatar,
     icons,
   };
