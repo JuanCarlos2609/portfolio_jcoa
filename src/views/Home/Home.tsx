@@ -9,32 +9,38 @@ import {
   Tooltip,
   useMediaQuery,
   useTheme,
-  Fab,
+  Divider,
 } from '@mui/material';
 import {
   Download,
   LinkedIn,
   GitHub,
   Facebook,
-  KeyboardArrowUp,
 } from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
 import { useTranslation } from '@translations';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Items } from './type';
 import { AboutMe } from '../AboutMe';
-import { ScrollTop } from '../../components/ScrollTop';
+import photo from '../../assets/photo.jpg';
 
 const Home = () => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   const style = useHomeStyles();
   const { t } = useTranslation();
+  const aboutMeRef = useRef<HTMLDivElement | null>(null);
   const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
     setShow(true);
   }, []);
+
+  const AboutMeScrollTo = () => {
+    if (aboutMeRef.current) {
+      aboutMeRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const Items: Items[] = [
     {
@@ -55,12 +61,12 @@ const Home = () => {
   ];
 
   return (
-    <div style={{ flexDirection: 'column'}}>
-      <Grid container spacing={2} sx={style.container}>
+    <div style={{ flexDirection: 'column' }}>
+      <Grid container sx={style.container}>
         {matches && (
           <Grid item xs={12} md={6} sx={style.contentItem}>
             <Slide direction='down' in={show} timeout={1000}>
-              <Avatar sx={style.avatar} />
+              <Avatar sx={style.avatar} src={photo} alt="photo"/>
             </Slide>
 
             <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
@@ -96,7 +102,11 @@ const Home = () => {
               en mi profesión.
             </Typography>
 
-            <Stack direction='row' spacing={2} sx={style.actionButtons}>
+            <Stack
+              direction='row'
+              spacing={{ xs: 2, sm: 4 }}
+              sx={style.actionButtons}
+            >
               <Button
                 variant='outlined'
                 endIcon={<Download />}
@@ -107,7 +117,7 @@ const Home = () => {
               >
                 {t('home.downloadCv')}
               </Button>
-              <Button variant='contained' href='#aboutMe'>
+              <Button variant='contained' onClick={AboutMeScrollTo}>
                 {t('home.aboutMe')}
               </Button>
             </Stack>
@@ -116,9 +126,7 @@ const Home = () => {
 
         {!matches && (
           <Grid item xs={12} md={6} sx={style.contentItem}>
-            <Slide direction='down' in={show} timeout={1000}>
-              <Avatar sx={style.avatar} />
-            </Slide>
+            <Avatar sx={style.avatar} src={photo} alt="photo" />
 
             <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
               {Items.map((item) => (
@@ -132,15 +140,10 @@ const Home = () => {
           </Grid>
         )}
       </Grid>
-
-      {/* <div id='aboutMe'>
+      <Divider style={{ marginBottom: '70px', border: '1px solid' }} />
+      <div ref={aboutMeRef}>
         <AboutMe />
-        <ScrollTop>
-          <Fab color='primary' size='small' aria-label='scroll back to top'>
-            <KeyboardArrowUp />
-          </Fab>
-        </ScrollTop>
-      </div> */}
+      </div>
     </div>
   );
 };

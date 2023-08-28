@@ -1,9 +1,11 @@
 import { ReactNode, useEffect } from 'react';
-import { AppBar, Box, Toolbar } from '@mui/material';
+import { AppBar, Box, Fab, Toolbar } from '@mui/material';
 import { Header } from '../../components/Header';
 import { StylesFullScreenLAyout } from './StylesFullScreenLayout';
 import { LanguageSelector } from '../../components/Language';
 import { Theme } from '../../components/Theme';
+import { ScrollTop } from '../../components/ScrollTop';
+import { KeyboardArrowUp } from '@mui/icons-material';
 
 interface Props {
   children: ReactNode;
@@ -12,23 +14,17 @@ interface Props {
 const FullScreenLayout = ({ children }: Props) => {
   const style = StylesFullScreenLAyout();
 
-  // useEffect(() => {
-  //   window.onbeforeunload = () => {
-  //     window.scrollTo(0, 0);
-  //   };
-
-  //   return () => {
-  //     window.onbeforeunload = null;
-  //   };
-  // }, []);
-
   return (
     <Box component='div' sx={style.container} style={{}}>
       <Header />
 
-      <Box component='div' sx={style.render}>
-        {children}
-      </Box>
+      <>{children}</>
+
+      <ScrollTop>
+        <Fab color='primary' size='small' aria-label='scroll back to top'>
+          <KeyboardArrowUp />
+        </Fab>
+      </ScrollTop>
     </Box>
   );
 };

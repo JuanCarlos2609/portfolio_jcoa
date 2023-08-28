@@ -18,6 +18,23 @@ export const en = {
     aboutMe: 'About Me'
   },
   aboutMe: {
-    title: 'About Me'
+    title: 'About Me',
+    skillTitle: 'Technical Skills',
+    education: 'Education',
+    nameSchool: 'Higher School of Mechanical and Electrical Engineering.',
+    grade: 'Intern in Communications and Electronics Engineering.',
+    work: 'Work Experience',
+    fristCompanyName: 'kbTel Telecommunications',
+    fristPosition: 'Junior Web Developer',
+    fristDescription: 'Migration of web pages, implementation of an architecture and training of staff in the development area.',
+
+    secondCompanyName: 'Octopy',
+    secondPosition: 'Front End Developer',
+    secondDescription: 'Leadership and development of web and responsive pages such as: online stores, dashboards, surveys, shift screen and more.',
+
+    thirdCompanyName: 'BIORENT SOLUTIONS',
+    thirdPosition: 'Development Engineer',
+    thirdDescription: 'Development of software that is responsible for managing medical equipment in hospitals and ambulances.'
+
   }
 };

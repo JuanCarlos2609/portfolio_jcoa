@@ -1,15 +1,110 @@
-import { Grid, Typography } from '@mui/material';
+import { Divider, Grid, Paper, Tooltip, Typography } from '@mui/material';
+import { School, Engineering } from '@mui/icons-material';
+import {
+  Timeline,
+  TimelineSeparator,
+  TimelineDot,
+  TimelineConnector,
+  TimelineContent,
+} from '@mui/lab';
+import TimelineItem from '@mui/lab/TimelineItem';
 import { useTranslation } from '@translations';
 import { useAboutMeStyles } from './AboutMeStyles';
+import { array } from './helpers';
 
 const AboutMe = () => {
   const style = useAboutMeStyles();
   const { t } = useTranslation();
 
+  const algo = [
+    {
+      companyName: t('aboutMe.fristCompanyName'),
+      position: t('aboutMe.fristPosition'),
+      description: t('aboutMe.fristDescription'),
+    },
+    {
+      companyName: t('aboutMe.secondCompanyName'),
+      position: t('aboutMe.secondPosition'),
+      description: t('aboutMe.secondDescription'),
+    },
+    {
+      companyName: t('aboutMe.thirdCompanyName'),
+      position: t('aboutMe.thirdPosition'),
+      description: t('aboutMe.thirdDescription'),
+    },
+  ];
+
   return (
-    <Grid container style={{ backgroundColor: 'pink', marginBottom: '200px' }}>
-      <Grid item xs={12}>
-        <Typography sx={style.title}>{t('aboutMe.title')}</Typography>
+    <Grid sx={style.container}>
+      <Typography sx={style.title} variant='h4'>
+        {t('aboutMe.title')}
+      </Typography>
+      <Grid container>
+        <Grid item xs={12} md={6}>
+          <Timeline position='alternate'>
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot variant='outlined'>
+                  <School />
+                </TimelineDot>
+                <TimelineConnector sx={{ backgroundColor: 'primary.main' }} />
+              </TimelineSeparator>
+              <TimelineContent>
+                <Typography sx={style.titleTimeLine}>
+                  {t('aboutMe.education')}
+                </Typography>
+                <Typography sx={{ fontSize: '14px', fontStyle: 'oblique' }}>
+                  {t('aboutMe.nameSchool')}
+                </Typography>
+                <Typography sx={{ fontSize: '14px', fontStyle: 'oblique' }}>
+                  {t('aboutMe.grade')}
+                </Typography>
+              </TimelineContent>
+            </TimelineItem>
+
+            <TimelineItem>
+              <TimelineSeparator>
+                <TimelineDot variant='outlined'>
+                  <Engineering />
+                </TimelineDot>
+                <TimelineConnector sx={{ backgroundColor: 'primary.main' }} />
+              </TimelineSeparator>
+
+              <TimelineContent>
+                <Typography sx={style.titleTimeLine}>
+                  {t('aboutMe.work')}
+                </Typography>
+                {algo.map((item, index) => (
+                  <div key={`${index}-${item.companyName}`}>
+                    <Typography sx={style.subtitleTimeLine}>
+                      {item.companyName}
+                    </Typography>
+                    <Typography sx={{ fontSize: '13.5px' }}>
+                      {item.position}
+                    </Typography>
+                    <Typography sx={{ mt: '10px', fontSize: '13px' }}>
+                      {item.description}
+                    </Typography>
+                    <Divider sx={{ mt: '10px' }} />
+                  </div>
+                ))}
+              </TimelineContent>
+            </TimelineItem>
+          </Timeline>
+        </Grid>
+        <Grid item xs={12} md={6} sx={{ padding: '20px' }}>
+          <Typography sx={style.subtitle}>{t('aboutMe.skillTitle')}</Typography>
+
+          <Grid container spacing={3} justifyContent={{xs: 'center', md: 'start'}}>
+            {array.map((item) => (
+              <Tooltip key={item.name} title={item.name}>
+                <Grid item>
+                  <Paper sx={{ p: 1 }}>{item.icon}</Paper>
+                </Grid>
+              </Tooltip>
+            ))}
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
