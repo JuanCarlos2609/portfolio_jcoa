@@ -11,12 +11,7 @@ import {
   useTheme,
   Divider,
 } from '@mui/material';
-import {
-  Download,
-  LinkedIn,
-  GitHub,
-  Facebook,
-} from '@mui/icons-material';
+import { Download, LinkedIn, GitHub, Facebook } from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
 import { useTranslation } from '@translations';
 import { useEffect, useRef, useState } from 'react';
@@ -66,16 +61,14 @@ const Home = () => {
         {matches && (
           <Grid item xs={12} md={6} sx={style.contentItem}>
             <Slide direction='down' in={show} timeout={1000}>
-              <Avatar sx={style.avatar} src={photo} alt="photo"/>
+              <Avatar sx={style.avatar} src={photo} alt='photo' />
             </Slide>
 
             <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
               {Items.map((item) => (
-                <Tooltip key={item.name} title={item.name}>
-                  <IconButton component='a' target='_blank' href={item.path}>
-                    {item.icon}
-                  </IconButton>
-                </Tooltip>
+                <IconButton component='a' target='_blank' href={item.path}>
+                  {item.icon}
+                </IconButton>
               ))}
             </Stack>
           </Grid>
@@ -126,7 +119,7 @@ const Home = () => {
 
         {!matches && (
           <Grid item xs={12} md={6} sx={style.contentItem}>
-            <Avatar sx={style.avatar} src={photo} alt="photo" />
+            <Avatar sx={style.avatar} src={photo} alt='photo' />
 
             <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
               {Items.map((item) => (

@@ -13,6 +13,7 @@ export const useDrawerStyles = () => {
     display: 'flex',
     justifyContent: 'flex-end',
     marginBottom: '10px',
+    p: '10px',
   };
 
   const titleDrawer = {
@@ -21,13 +22,13 @@ export const useDrawerStyles = () => {
     textTransform: 'uppercase',
     fontWeight: 'bold',
     mb: '20px',
-    p: '20px'
-  }
+    p: '20px',
+  };
 
   return {
     container,
     contentDrawer,
     contentIcon,
-    titleDrawer
+    titleDrawer,
   };
 };
