@@ -42,7 +42,8 @@ const Header = () => {
             variant='h5'
             sx={{ fontWeight: 700, letterSpacing: '1px' }}
           >
-            {t('header.titleHeader')}
+            {/* {t('header.titleHeader')} */}
+            Carta Porte
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Stack spacing={2} direction='row'>

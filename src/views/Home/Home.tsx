@@ -18,6 +18,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Items } from './type';
 import { AboutMe } from '../AboutMe';
 import photo from '../../assets/photo.jpg';
+import { Certifications } from '../Certifications';
 
 const Home = () => {
   const theme = useTheme();
@@ -133,9 +134,17 @@ const Home = () => {
           </Grid>
         )}
       </Grid>
-      <Divider style={{ marginBottom: '70px', border: '1px solid' }} />
+      <Divider style={{ marginBottom: '45px', border: '1px solid' }} />
       <div ref={aboutMeRef}>
         <AboutMe />
+      </div>
+      <Divider style={{ marginBottom: '45px', border: '1px solid' }} />
+      <div
+        style={{
+          marginBottom: '100px',
+        }}
+      >
+        <Certifications />
       </div>
     </div>
   );
