@@ -1,5 +1,5 @@
 import { Theme, useTheme } from '@mui/material';
-import teclado from '../../assets/teclado.jpg';
+import teclado from '../../assets/png/teclado.jpg';
 
 export const useHomeStyles = () => {
   const theme = useTheme();

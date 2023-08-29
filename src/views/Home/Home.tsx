@@ -17,7 +17,7 @@ import { useTranslation } from '@translations';
 import { useEffect, useRef, useState } from 'react';
 import { Items } from './type';
 import { AboutMe } from '../AboutMe';
-import photo from '../../assets/photo.jpg';
+import photo from '../../assets/png/photo.jpg';
 import { Certifications } from '../Certifications';
 
 const Home = () => {
@@ -66,8 +66,13 @@ const Home = () => {
             </Slide>
 
             <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
-              {Items.map((item) => (
-                <IconButton component='a' target='_blank' href={item.path}>
+              {Items.map((item, index) => (
+                <IconButton
+                  key={`${index}-${item.name}`}
+                  component='a'
+                  target='_blank'
+                  href={item.path}
+                >
                   {item.icon}
                 </IconButton>
               ))}
@@ -123,8 +128,8 @@ const Home = () => {
             <Avatar sx={style.avatar} src={photo} alt='photo' />
 
             <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
-              {Items.map((item) => (
-                <Tooltip key={item.name} title={item.name}>
+              {Items.map((item, index) => (
+                <Tooltip key={`${index}-${item.name}`} title={item.name}>
                   <IconButton component='a' target='_blank' href={item.path}>
                     {item.icon}
                   </IconButton>

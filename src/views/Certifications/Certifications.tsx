@@ -1,26 +1,26 @@
 import { Button, Grid, Paper } from '@mui/material';
 import { useCertificationsStyles } from './CertificationsStyles';
+import courseJsTs from '../../assets/jpg/ReactJs_Typescripct.jpg';
 import Carousel from 'react-material-ui-carousel';
 
 interface Props {
   props: any;
-  key: any;
 }
 
-function Item({ props, key }: Props) {
+function Item({ props }: Props) {
   return (
     <Paper
-      key={key}
       sx={{
         backgroundColor: 'pink',
-        padding: '20px',
-        height: 300,
+        // padding: '20px',
+        height: 310,
       }}
     >
-      <h2>{props.name}</h2>
-      <p>{props.description}</p>
-
-      <Button className='CheckButton'>Check it out!</Button>
+      <img
+        src={props.url}
+        alt={props.name}
+        style={{ height: '100%', width: '100%' }}
+      />
     </Paper>
   );
 }
@@ -30,12 +30,9 @@ const Certifications = () => {
 
   const items = [
     {
-      name: 'Random Name #1',
+      name: 'Constancia React Js + Typescript',
+      url: courseJsTs,
       description: 'Probably the most random thing you have ever seen!',
-    },
-    {
-      name: 'Random Name #2',
-      description: 'Hello World!',
     },
   ];
 
@@ -51,10 +48,16 @@ const Certifications = () => {
         sx={{
           width: 450,
           minHeight: 350,
+          backgroundColor: 'green',
         }}
       >
         {items.map((item, index) => (
-          <Item key={index} props={item} />
+          <div
+            key={`${index}-${item.name}`}
+            style={{ backgroundColor: 'grey' }}
+          >
+            <Item props={item} />
+          </div>
         ))}
       </Carousel>
     </Grid>
