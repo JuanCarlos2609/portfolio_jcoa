@@ -36,7 +36,7 @@ const AboutMe = () => {
 
   return (
     <Grid sx={style.container}>
-      <Typography sx={style.title} variant='h4'>
+      <Typography sx={style.title} >
         {t('aboutMe.title')}
       </Typography>
       <Grid container>

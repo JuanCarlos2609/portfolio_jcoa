@@ -9,6 +9,8 @@ export const es = {
   theme: {
     changeToDark: 'Cambiar a modo Obscuro',
     changeToLight: 'Cambiar a modo Claro',
+    dark: 'Obscuro',
+    light: 'Claro'
   },
   home: {
     greeting: 'Hola',
@@ -16,6 +18,9 @@ export const es = {
     profession: 'Desarrollador Frontend',
     downloadCv: 'Descargar CV',
     aboutMe: 'Sobre mí'
+  },
+  drawer: {
+    titleDrawer: 'Menú'
   },
   aboutMe: {
     title: 'Sobre Mí',

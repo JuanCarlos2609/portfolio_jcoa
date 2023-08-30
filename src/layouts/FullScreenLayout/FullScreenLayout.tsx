@@ -1,9 +1,7 @@
-import { ReactNode, useEffect } from 'react';
-import { AppBar, Box, Fab, Toolbar } from '@mui/material';
+import { ReactNode } from 'react';
+import { Box, Fab } from '@mui/material';
 import { Header } from '../../components/Header';
 import { StylesFullScreenLAyout } from './StylesFullScreenLayout';
-import { LanguageSelector } from '../../components/Language';
-import { Theme } from '../../components/Theme';
 import { ScrollTop } from '../../components/ScrollTop';
 import { KeyboardArrowUp } from '@mui/icons-material';
 

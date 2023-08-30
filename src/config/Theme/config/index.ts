@@ -3,7 +3,7 @@ import { common } from './common';
 import { light } from './light';
 import { dark } from './dark';
 import { getProps } from './props';
-import { getShadows } from './shadows';
+// import { getShadows } from './shadows';
 
 interface ThemeConfig {
   breakpoints: any;

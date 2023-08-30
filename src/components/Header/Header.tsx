@@ -1,4 +1,4 @@
-import { useState, useTransition } from 'react';
+import { useState } from 'react';
 import {
   AppBar,
   Box,
@@ -12,7 +12,12 @@ import {
   Toolbar,
   Typography,
 } from '@mui/material';
-import { ExpandLess, ExpandMore, Menu, Translate } from '@mui/icons-material';
+import {
+  ExpandLess,
+  ExpandMore,
+  Menu,
+  Translate,
+} from '@mui/icons-material';
 import { Drawer } from '../Drawer';
 import { LanguageSelector } from '../Language';
 import { Theme } from '../Theme';
@@ -42,8 +47,7 @@ const Header = () => {
             variant='h5'
             sx={{ fontWeight: 700, letterSpacing: '1px' }}
           >
-            {/* {t('header.titleHeader')} */}
-            Carta Porte
+            {t('header.titleHeader')}
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
             <Stack spacing={2} direction='row'>
@@ -51,16 +55,20 @@ const Header = () => {
               <Theme />
             </Stack>
           </Box>
-          <Box sx={{ display: { sx: 'flex', sm: 'none' } }}>
+          <Box sx={{ display: { sx: 'flex', sm: 'none' }}}>
+            <Stack direction="row" spacing={1}>
+            <Theme/>
+
             <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
               <Menu />
             </IconButton>
+            </Stack>
           </Box>
         </Toolbar>
       </AppBar>
       <Drawer
         open={openDrawer}
-        title='Menú'
+        title={t('drawer.titleDrawer')}
         onClose={() => setOpenDrawer(false)}
       >
         <ListItemButton onClick={() => setCollapse(!collapse)}>

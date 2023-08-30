@@ -26,7 +26,7 @@ const config = {
     useSuspense: false,
   },
   saveMissing: true,
-  missingKeyHandler: function (locale: any, ns: any, key: any) {
+  missingKeyHandler: function () {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
       // dev code
       // throw new Error(`The key does not exist in the translation file:�${key}`);

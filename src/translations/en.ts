@@ -9,6 +9,8 @@ export const en = {
   theme: {
     changeToDark: 'Change to Dark Mode',
     changeToLight: 'Change to Light Mode',
+    dark: 'Dark',
+    light: 'Light'
   },
   home: {
     greeting: 'Hi',
@@ -16,6 +18,9 @@ export const en = {
     profession: 'Frontend Developer',
     downloadCv: 'Download CV',
     aboutMe: 'About Me'
+  },
+  drawer: {
+    titleDrawer: 'Menu'
   },
   aboutMe: {
     title: 'About Me',
