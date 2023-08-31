@@ -26,13 +26,14 @@ const LanguageSelector = () => {
   return (
     <Box>
       <Button
-        color='inherit'
+        variant='outlined'
         size='large'
         aria-controls='locale-menu'
         aria-haspopup='true'
         endIcon={<ArrowDropDown />}
         startIcon={<Translate />}
         onClick={handleClick}
+        sx={{ color: (theme) => theme.palette.common.white }}
       >
         <div>{t(`language.${language}`)}</div>
       </Button>

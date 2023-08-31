@@ -6,7 +6,6 @@ import { ThemeProvider as MUIThemeProvider, createTheme } from '@mui/material';
 import { getItem } from '../../utils/persistentStorage';
 import { Theme } from '@emotion/react';
 import { themeConfig } from '../../config/Theme/config';
-// import { themeConfig } from '../../providers/theme/config';
 
 interface Props {
   children: ReactNode;
@@ -43,7 +42,7 @@ const ThemeProvider = ({ children, defaultTheme }: Props) => {
     };
 
     const skin: any = {
-      // shadows: themeConfig.getShadows(palette),
+      shadows: themeConfig.getShadows(palette),
       ...themeConfig[selectedSkin],
       ...themeConfig.common,
       palette,
