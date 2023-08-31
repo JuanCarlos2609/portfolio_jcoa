@@ -25,7 +25,7 @@ const Theme = () => {
         <IconButton onClick={handleToggleTheme}>
           {theme === light ? (
             <DarkMode
-              sx={{ color: (theme: MuiTheme) => theme.palette.common.black }}
+              sx={{ color: (theme: MuiTheme) => theme.palette.common.white }}
             />
           ) : (
             <LightMode

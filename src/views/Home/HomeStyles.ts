@@ -14,10 +14,14 @@ export const useHomeStyles = () => {
     overflowX: 'hidden',
     overflow: 'hidden',
   };
+  const rootDivider = {
+    color: (theme: Theme) => theme.palette.primary.main,
+    border: '1px solid',
+  };
 
   const principalPage = {
-    pl: { xs: '15px', sm: '30px' },
-    pr: { xs: '15px', sm: '30px' },
+    pl: { xs: '15px', md: '30px' },
+    pr: { xs: '15px', md: '30px' },
     pt: '30px',
   };
 
@@ -27,7 +31,7 @@ export const useHomeStyles = () => {
   };
 
   const contentSocialButtons = {
-    mt: '20px',
+    mt: 5,
     display: 'flex',
     justifyContent: 'center',
   };
@@ -36,7 +40,7 @@ export const useHomeStyles = () => {
     minHeight: '100vh',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: { xs: 'start', md: 'center' },
   };
 
   const principalText = {
@@ -44,37 +48,39 @@ export const useHomeStyles = () => {
     letterSpacing: '1.5px',
     fontSize: { xs: '30px', sm: '40px', md: '60px' },
     textAlign: { xs: 'center', md: 'start' },
-    mt: { xs: '30px', md: '0px' },
+    mt: { xs: 9, md: 0 },
+    mb: { xs: 1, md: 2 },
     color: (theme: Theme) => theme.palette.common.white,
   };
 
   const professionText = {
-    marginTop: { xs: '10px', md: '30px' },
+    mt: { xs: 3, md: 0 },
+    mb: { xs: 3, md: 4 },
     fontWeight: 600,
     letterSpacing: '1px',
     fontSize: { xs: '20px', sm: '30px', md: '40px' },
     textAlign: { xs: 'center', md: 'start' },
-    // color: (theme: Theme) => theme.palette.primary.main,
   };
 
   const objetiveText = {
-    marginTop: { xs: '20px', md: '60px' },
+    mt: { xs: 3, md: 6 },
+    mb: { xs: 10, md: 6 },
     letterSpacing: '0.5px',
     fontWeight: 400,
-    fontSize: { xs: '14px', sm: '18px', md: '20px' },
+    fontSize: { xs: '17px', sm: '20px', md: '20px' },
+    textAlign: { xs: 'center', md: 'start' },
     color: (theme: Theme) => theme.palette.common.white,
   };
 
   const actionButtons = {
     display: 'flex',
     justifyContent: { xs: 'center', md: 'start' },
-    mt: { xs: '20px', md: '70px' },
-    mb: { xs: '20px', md: '70px' },
+    mt: { xs: 3, md: 6 },
   };
 
   const avatar = {
-    height: { xs: '12rem', sm: '18rem', md: '20rem' },
-    width: { xs: '12rem', sm: '18rem', md: '20rem' },
+    height: { xs: '15rem', sm: '20rem', md: '23rem' },
+    width: { xs: '15rem', sm: '20rem', md: '23rem' },
     marginBottom: { xs: '10px', md: '40px' },
     border: '6px solid',
     color: (theme: Theme) => theme.palette.primary.main,
@@ -91,6 +97,7 @@ export const useHomeStyles = () => {
 
   return {
     container,
+    rootDivider,
     principalPage,
     contentAvatar,
     contentSocialButtons,

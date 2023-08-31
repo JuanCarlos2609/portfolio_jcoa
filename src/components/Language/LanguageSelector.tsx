@@ -26,7 +26,6 @@ const LanguageSelector = () => {
   return (
     <Box>
       <Button
-        variant='outlined'
         size='large'
         aria-controls='locale-menu'
         aria-haspopup='true'

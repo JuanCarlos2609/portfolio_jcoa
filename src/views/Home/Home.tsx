@@ -11,6 +11,7 @@ import {
   useMediaQuery,
   useTheme,
   Divider,
+  Theme,
 } from '@mui/material';
 import { Download, LinkedIn, GitHub, Facebook } from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
@@ -61,16 +62,10 @@ const Home = () => {
     <Grid component='div' sx={{ flexDirection: 'column' }}>
       <Grid sx={style.container}>
         <Header />
-        <Divider
-          variant='middle'
-          sx={{
-            color: (theme) => theme.palette.primary.main,
-            border: '1px solid',
-          }}
-        />
+        <Divider variant='middle' sx={style.rootDivider} />
         <Grid container sx={style.principalPage}>
           {matches && (
-            <Grid item xs={12} sx={{ flexDirection: 'column' }}>
+            <Grid item xs={12} sx={{ flexDirection: 'column', mt: 10 }}>
               <Grid style={style.contentAvatar}>
                 <Slide direction='down' in={show} timeout={1000}>
                   <Avatar sx={style.avatar} src={photo} alt='photo' />
@@ -103,16 +98,15 @@ const Home = () => {
                 component='p'
                 sx={style.professionText}
                 variant='h4'
-                // color='secondary'
+                color='primary'
               >
                 {t('home.profession')}
               </Typography>
               <Typography sx={style.objetiveText} variant='h6'>
                 Gran capacidad de adaptación a las nuevas tecnologías y
-                paradigmas, proporcionando soluciones efectivas. <br />
-                Continua capacitación y formación de habilidades autodidactas
-                que permitan la expansión de conocimientos técnicos en mi
-                profesión.
+                paradigmas, proporcionando soluciones efectivas. Continua
+                capacitación y formación de habilidades autodidactas que
+                permitan la expansión de conocimientos técnicos en mi profesión.
               </Typography>
 
               <Stack
@@ -130,7 +124,11 @@ const Home = () => {
                 >
                   {t('home.downloadCv')}
                 </Button>
-                <Button variant='contained' onClick={AboutMeScrollTo}>
+                <Button
+                  variant='contained'
+                  onClick={AboutMeScrollTo}
+                  sx={{ color: (theme: Theme) => theme.palette.common.white }}
+                >
                   {t('home.aboutMe')}
                 </Button>
               </Stack>
@@ -160,10 +158,11 @@ const Home = () => {
           )}
         </Grid>
       </Grid>
-      <Grid ref={aboutMeRef}>
+      <Grid sx={{ mb: 8, mt: 8 }} ref={aboutMeRef}>
         <AboutMe />
       </Grid>
-      <Grid sx={{ mb: 20 }}>
+      <Divider variant='middle' sx={style.rootDivider} />
+      <Grid sx={{ mb: 20, mt: 8 }}>
         <Certifications />
       </Grid>
     </Grid>

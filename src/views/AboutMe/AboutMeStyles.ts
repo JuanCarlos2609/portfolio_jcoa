@@ -1,7 +1,7 @@
 export const useAboutMeStyles = () => {
   const container = {
-    pl: { xs: '10px', md: '20px' }, //30
-    pr: { xs: '10px', md: '20px' },
+    pl: { xs: '15px', md: '30px' }, //30
+    pr: { xs: '15px', md: '30px' },
     pt: '10px',
     mb: '30px',
   };

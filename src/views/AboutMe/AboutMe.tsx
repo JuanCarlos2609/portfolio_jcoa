@@ -99,7 +99,7 @@ const AboutMe = () => {
             {array.map((item) => (
               <Tooltip key={item.name} title={item.name}>
                 <Grid item>
-                  <Paper sx={{ p: 1 }}>{item.icon}</Paper>
+                  <Paper sx={{ p: 1,  boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.5)'}}>{item.icon}</Paper>
                 </Grid>
               </Tooltip>
             ))}
