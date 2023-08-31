@@ -10,17 +10,17 @@ export const es = {
     changeToDark: 'Cambiar a modo Obscuro',
     changeToLight: 'Cambiar a modo Claro',
     dark: 'Obscuro',
-    light: 'Claro'
+    light: 'Claro',
   },
   home: {
     greeting: 'Hola',
     iam: 'Soy Juan Carlos Orta',
     profession: 'Desarrollador Frontend',
     downloadCv: 'Descargar CV',
-    aboutMe: 'Sobre mí'
+    aboutMe: 'Sobre mí',
   },
   drawer: {
-    titleDrawer: 'Menú'
+    titleDrawer: 'Menú',
   },
   aboutMe: {
     title: 'Sobre Mí',
@@ -31,15 +31,20 @@ export const es = {
     work: 'Experiencia Laboral',
     fristCompanyName: 'kbTel Telecomunicaciónes',
     fristPosition: 'Desarrollador Web Jr',
-    fristDescription: 'Migración de páginas web, implementación de una arquitectura y capacitación al personal del área de desarrollo.',
+    fristDescription:
+      'Migración de páginas web, implementación de una arquitectura y capacitación al personal del área de desarrollo.',
 
     secondCompanyName: 'Octopy',
     secondPosition: 'Desarrollador Front End',
-    secondDescription: 'Liderazgo y desarrollo de páginas web y responsivas como: tiendas en linea, dashboards, encuestas, pantalla de turnos y más.',
+    secondDescription:
+      'Liderazgo y desarrollo de páginas web y responsivas como: tiendas en linea, dashboards, encuestas, pantalla de turnos y más.',
 
     thirdCompanyName: 'BIORENT SOLUTIONS',
     thirdPosition: 'Ingeniero de Desarrollo',
-    thirdDescription: 'Desarrollo de software que se encarga de administrar equipos médicos; de los hospitales y ambulancias.'
-
-  }
+    thirdDescription:
+      'Desarrollo de software que se encarga de administrar equipos médicos; de los hospitales y ambulancias.',
+  },
+  certifications: {
+    title: '        Certificados - Cursos - Logros',
+  },
 };

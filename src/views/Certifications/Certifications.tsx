@@ -1,23 +1,15 @@
-import { Card, Grid, Paper, Typography } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import { useCertificationsStyles } from './CertificationsStyles';
-import scrum from '../../assets/png/scrum.png';
-import userExperience from '../../assets/png/user_experience.png';
-import courseJsTs from '../../assets/jpg/ReactJs_Typescripct.jpg';
-import reactJsTs from '../../assets/png/Reactjs_Typescript.png';
 import Carousel from 'react-material-ui-carousel';
-
-interface ItemProps {
-  props: {
-    name: string;
-    url: string;
-  };
-}
+import { ItemProps } from './types';
+import { items } from './helpers';
+import { useTranslation } from '@translations';
 
 function Item({ props }: ItemProps) {
   return (
     <Paper
       sx={{
-        height: { xs: 250, md: 310 },
+        height: { xs: 220, md: 310 }, //250, 310
         borderRadius: 0,
       }}
     >
@@ -32,45 +24,16 @@ function Item({ props }: ItemProps) {
 }
 
 const Certifications = () => {
+  const { t } = useTranslation();
   const style = useCertificationsStyles();
-
-  const items = [
-    {
-      name: 'Certificación metodología SCRUM',
-      url: scrum,
-    },
-    {
-      name: 'Aspectos básicos del diseño de la  experiencia del  usuario',
-      url: userExperience,
-    },
-    {
-      name: 'Constancia impartición curso React Js y Typescipt',
-      url: courseJsTs,
-    },
-    {
-      name: 'Certificado Curso de React con Typescript',
-      url: reactJsTs,
-    },
-  ];
 
   return (
     <Grid sx={style.container}>
-      <Typography
-        sx={{
-          mb: '30px',
-          textTransform: 'uppercase',
-          fontWeight: 'bold',
-          fontSize: { xs: '18px', md: '25px' },
-        }}
-      >
-        Certificados - Cursos - Logros
-      </Typography>
+      <Typography sx={style.title}>{t('certifications.title')}</Typography>
       <Grid sx={style.contentCarousel}>
         <Carousel
           sx={{
-            width: 450,
-            // minHeight: 360,
-            backgroundColor: 'green',
+            width: { xs: 300, sm: 350, md: 450 },
           }}
         >
           {items.map((item, index) => (

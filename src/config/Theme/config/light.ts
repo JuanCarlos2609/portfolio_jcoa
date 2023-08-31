@@ -2,6 +2,9 @@ export const light = {
   palette: {
     mode: 'light',
     // divider: '#E5E8EC',
+    primary: {
+      main: '#FFACFC',
+    },
     common: {
       black: '#161c24',
       white: '#fff',

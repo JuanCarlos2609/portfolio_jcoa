@@ -3,7 +3,7 @@ import { common } from './common';
 import { light } from './light';
 import { dark } from './dark';
 import { getProps } from './props';
-// import { getShadows } from './shadows';
+import { getShadows } from './shadows';
 
 interface ThemeConfig {
   breakpoints: any;
@@ -11,7 +11,7 @@ interface ThemeConfig {
   light: any;
   dark: any;
   getProps: (theme: any) => any;
-  // getShadows: (pallete: any) => any;
+  getShadows: (pallete: any) => any;
 }
 
 export const themeConfig: ThemeConfig = {
@@ -20,5 +20,5 @@ export const themeConfig: ThemeConfig = {
   light,
   dark,
   getProps,
-  // getShadows,
+  getShadows,
 };

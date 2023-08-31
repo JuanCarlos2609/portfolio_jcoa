@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import {
   Avatar,
   Button,
@@ -13,20 +14,20 @@ import {
 } from '@mui/material';
 import { Download, LinkedIn, GitHub, Facebook } from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
-import { useTranslation } from '@translations';
-import { useEffect, useRef, useState } from 'react';
 import { Items } from './type';
-import { AboutMe } from '../AboutMe';
-import photo from '../../assets/png/photo.jpg';
 import { Certifications } from '../Certifications';
+import { Header } from '../../components/Header';
+import { AboutMe } from '../AboutMe';
+import { useTranslation } from '@translations';
+import photo from '../../assets/png/photo.jpg';
 
 const Home = () => {
+  const { t } = useTranslation();
+  const [show, setShow] = useState<boolean>(false);
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   const style = useHomeStyles();
-  const { t } = useTranslation();
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
-  const [show, setShow] = useState<boolean>(false);
 
   useEffect(() => {
     setShow(true);
@@ -57,30 +58,43 @@ const Home = () => {
   ];
 
   return (
-    <div style={{ flexDirection: 'column' }}>
-      <Grid container sx={style.container}>
-        {matches && (
-          <Grid item xs={12} md={6} sx={style.contentItem}>
-            <Slide direction='down' in={show} timeout={1000}>
-              <Avatar sx={style.avatar} src={photo} alt='photo' />
-            </Slide>
-
-            <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
-              {Items.map((item, index) => (
-                <IconButton
-                  key={`${index}-${item.name}`}
-                  component='a'
-                  target='_blank'
-                  href={item.path}
-                >
-                  {item.icon}
-                </IconButton>
-              ))}
-            </Stack>
-          </Grid>
-        )}
-        <Grid item xs={12} md={6} sx={style.contentItem}>
-          <Grid sx={{ m: '10px' }}>
+    <Grid component='div' sx={{ flexDirection: 'column' }}>
+      <Grid sx={style.container}>
+        <Header />
+        <Divider
+          variant='middle'
+          sx={{
+            color: (theme) => theme.palette.primary.main,
+            border: '1px solid',
+          }}
+        />
+        <Grid container sx={style.principalPage}>
+          {matches && (
+            <Grid item xs={12} sx={{ flexDirection: 'column' }}>
+              <Grid style={style.contentAvatar}>
+                <Slide direction='down' in={show} timeout={1000}>
+                  <Avatar sx={style.avatar} src={photo} alt='photo' />
+                </Slide>
+              </Grid>
+              <Stack
+                direction='row'
+                spacing={2}
+                sx={style.contentSocialButtons}
+              >
+                {Items.map((item, index) => (
+                  <IconButton
+                    key={`${index}-${item.name}`}
+                    component='a'
+                    target='_blank'
+                    href={item.path}
+                  >
+                    {item.icon}
+                  </IconButton>
+                ))}
+              </Stack>
+            </Grid>
+          )}
+          <Grid item xs={12} md={6}>
             <Typography variant='h2' sx={style.principalText}>
               {t('home.greeting')}, {t('home.iam')}
             </Typography>
@@ -88,17 +102,15 @@ const Home = () => {
               component='p'
               sx={style.professionText}
               variant='h4'
-              color='primary'
+              // color='secondary'
             >
               {t('home.profession')}
             </Typography>
             <Typography sx={style.objetiveText} variant='h6'>
-              Fomento del trabajo en equipo, solución rápida a problemas y gran
-              capacidad de adaptación a las nuevas tecnologías y paradigmas,
-              proporcionando soluciones efectivas que producen un impacto
-              inmediato. Continua capacitación y formación de habilidades
-              autodidactas que permitan la expansión de conocimientos técnicos
-              en mi profesión.
+              Gran capacidad de adaptación a las nuevas tecnologías y
+              paradigmas, proporcionando soluciones efectivas. <br />
+              Continua capacitación y formación de habilidades autodidactas que
+              permitan la expansión de conocimientos técnicos en mi profesión.
             </Typography>
 
             <Stack
@@ -121,37 +133,40 @@ const Home = () => {
               </Button>
             </Stack>
           </Grid>
+          {!matches && (
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                backgroundColor: 'pink',
+                flexDirection: 'column',
+              }}
+            >
+              <Grid style={{}}>
+                <Avatar sx={style.avatar} src={photo} alt='photo' />
+              </Grid>
+              <Grid>2</Grid>
+
+              {/* <Avatar sx={style.avatar} src={photo} alt='photo' />
+
+              <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
+                {Items.map((item, index) => (
+                  <Tooltip key={`${index}-${item.name}`} title={item.name}>
+                    <IconButton component='a' target='_blank' href={item.path}>
+                      {item.icon}
+                    </IconButton>
+                  </Tooltip>
+                ))}
+              </Stack> */}
+            </Grid>
+          )}
         </Grid>
-
-        {!matches && (
-          <Grid item xs={12} md={6} sx={style.contentItem}>
-            <Avatar sx={style.avatar} src={photo} alt='photo' />
-
-            <Stack direction='row' spacing={2} sx={{ mt: '20px' }}>
-              {Items.map((item, index) => (
-                <Tooltip key={`${index}-${item.name}`} title={item.name}>
-                  <IconButton component='a' target='_blank' href={item.path}>
-                    {item.icon}
-                  </IconButton>
-                </Tooltip>
-              ))}
-            </Stack>
-          </Grid>
-        )}
       </Grid>
-      <Divider style={{ marginBottom: '45px', border: '1px solid' }} />
-      <div ref={aboutMeRef}>
+      <Grid ref={aboutMeRef}>
         <AboutMe />
-      </div>
-      <Divider style={{ marginBottom: '45px', border: '1px solid' }} />
-      <div
-        style={{
-          marginBottom: '100px',
-        }}
-      >
-        <Certifications />
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 

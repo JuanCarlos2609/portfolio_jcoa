@@ -1,10 +1,9 @@
 export const useAboutMeStyles = () => {
   const container = {
-    pl: { xs: '10px', md: '30px' },
-    pr: { xs: '10px', md: '30px' },
+    pl: { xs: '10px', md: '20px' }, //30
+    pr: { xs: '10px', md: '20px' },
     pt: '10px',
     mb: '30px',
-    // minHeight: '100vh'
   };
 
   const title = {
