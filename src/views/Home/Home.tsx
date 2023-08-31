@@ -88,7 +88,7 @@ const Home = () => {
               component='p'
               sx={style.professionText}
               variant='h4'
-              color='primary'
+              // color='secondary'
             >
               {t('home.profession')}
             </Typography>
@@ -139,11 +139,11 @@ const Home = () => {
           </Grid>
         )}
       </Grid>
-      <Divider style={{ marginBottom: '45px', border: '1px solid' }} />
+      <Divider variant='middle' sx={{ mb: '45px', border: '1px solid' }} />
       <div ref={aboutMeRef}>
         <AboutMe />
       </div>
-      <Divider style={{ marginBottom: '45px', border: '1px solid' }} />
+      <Divider variant='middle' sx={{ mb: '45px', border: '1px solid' }} />
       <div
         style={{
           marginBottom: '100px',

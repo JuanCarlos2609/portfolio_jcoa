@@ -42,7 +42,6 @@ export const useHomeStyles = () => {
     letterSpacing: '1px',
     fontSize: { xs: '20px', sm: '30px', md: '40px' },
     textAlign: { xs: 'center', md: 'start' },
-    color: '0xFF9CEF',
   };
 
   const objetiveText = {
