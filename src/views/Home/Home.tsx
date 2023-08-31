@@ -158,6 +158,7 @@ const Home = () => {
           )}
         </Grid>
       </Grid>
+      <Divider variant='fullWidth' sx={style.rootDivider}/>
       <Grid sx={{ mb: 8, mt: 8 }} ref={aboutMeRef}>
         <AboutMe />
       </Grid>

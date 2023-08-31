@@ -24,13 +24,9 @@ const Theme = () => {
       <Tooltip title={tooltipText}>
         <IconButton onClick={handleToggleTheme}>
           {theme === light ? (
-            <DarkMode
-              sx={{ color: (theme: MuiTheme) => theme.palette.common.white }}
-            />
+            <DarkMode color='primary' />
           ) : (
-            <LightMode
-              sx={{ color: (theme: MuiTheme) => theme.palette.common.white }}
-            />
+            <LightMode color='primary' />
           )}
         </IconButton>
       </Tooltip>

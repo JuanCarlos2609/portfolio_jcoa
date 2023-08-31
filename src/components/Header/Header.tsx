@@ -48,7 +48,7 @@ const Header = () => {
               <Stack direction='row' spacing={1}>
                 <Theme />
                 <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                  <Menu />
+                  <Menu  color='primary'/>
                 </IconButton>
               </Stack>
             </Box>
