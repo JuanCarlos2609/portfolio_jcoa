@@ -1,3 +1,5 @@
+import { Theme } from '@mui/material';
+
 export const useAboutMeStyles = () => {
   const container = {
     pl: { xs: '15px', md: '30px' }, //30
@@ -24,10 +26,11 @@ export const useAboutMeStyles = () => {
   const titleTimeLine = {
     fontSize: { xs: '11px', md: '15px' },
     fontWeight: 550,
-    letterSpacing: '1px',
-    textTransform: 'uppercase',
+    textTransform: 'capitalize',
     pb: '10px',
-    textDecoration: 'underline',
+    cursor: 'pointer',
+    letterSpacing: '1px',
+    color: (theme: Theme) => theme.palette.primary.main,
   };
 
   const subtitleTimeLine = {
@@ -36,5 +39,25 @@ export const useAboutMeStyles = () => {
     fontSize: '13.5px',
   };
 
-  return { container, title, subtitle, titleTimeLine, subtitleTimeLine };
+  const rootPaper = {
+    p: 1,
+    boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    alignItems: 'center',
+  };
+
+  const img = {
+    height: { xs: '60px', md: '65px' },
+    width: { xs: '60px', md: '65px' },
+  };
+
+  return {
+    container,
+    title,
+    subtitle,
+    titleTimeLine,
+    subtitleTimeLine,
+    rootPaper,
+    img,
+  };
 };

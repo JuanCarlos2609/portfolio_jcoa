@@ -10,13 +10,13 @@ import {
 import TimelineItem from '@mui/lab/TimelineItem';
 import { useTranslation } from '@translations';
 import { useAboutMeStyles } from './AboutMeStyles';
-import { array } from './helpers';
+import { skillsArray } from './helpers';
 
 const AboutMe = () => {
   const style = useAboutMeStyles();
   const { t } = useTranslation();
 
-  const algo = [
+  const workCompanies = [
     {
       companyName: t('aboutMe.fristCompanyName'),
       position: t('aboutMe.fristPosition'),
@@ -36,12 +36,10 @@ const AboutMe = () => {
 
   return (
     <Grid sx={style.container}>
-      <Typography sx={style.title} >
-        {t('aboutMe.title')}
-      </Typography>
+      <Typography sx={style.title}>{t('aboutMe.title')}</Typography>
       <Grid container>
         <Grid item xs={12} md={6}>
-          <Timeline position='alternate'>
+          <Timeline position='alternate-reverse'>
             <TimelineItem>
               <TimelineSeparator>
                 <TimelineDot variant='outlined'>
@@ -74,7 +72,7 @@ const AboutMe = () => {
                 <Typography sx={style.titleTimeLine}>
                   {t('aboutMe.work')}
                 </Typography>
-                {algo.map((item, index) => (
+                {workCompanies.map((item, index) => (
                   <div key={`${index}-${item.companyName}`}>
                     <Typography sx={style.subtitleTimeLine}>
                       {item.companyName}
@@ -95,11 +93,22 @@ const AboutMe = () => {
         <Grid item xs={12} md={6} sx={{ padding: '20px' }}>
           <Typography sx={style.subtitle}>{t('aboutMe.skillTitle')}</Typography>
 
-          <Grid container spacing={3} justifyContent={{xs: 'center', md: 'start'}}>
-            {array.map((item) => (
-              <Tooltip key={item.name} title={item.name}>
+          <Grid
+            container
+            spacing={3}
+            justifyContent={{ xs: 'center', md: 'start' }}
+          >
+            {skillsArray.map((item, index) => (
+              <Tooltip key={`${index}-${item.name}`} title={item.name}>
                 <Grid item>
-                  <Paper sx={{ p: 1,  boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.5)'}}>{item.icon}</Paper>
+                  <Paper sx={style.rootPaper}>
+                    <Grid
+                      component='img'
+                      src={item.icon}
+                      alt={item.name}
+                      sx={style.img}
+                    />
+                  </Paper>
                 </Grid>
               </Tooltip>
             ))}

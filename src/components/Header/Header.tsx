@@ -19,8 +19,13 @@ import { Theme } from '../Theme';
 import { useTranslation } from '@translations';
 import { HeaderStyles } from './HeaderStyles';
 import { languages } from '../../translations/i18n';
+import { Link } from 'react-router-dom';
 
-const Header = () => {
+interface HeaderProps {
+  proyectsRef: any;
+}
+
+const Header = ({ proyectsRef }: HeaderProps) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
   const style = HeaderStyles;
@@ -36,19 +41,44 @@ const Header = () => {
     setCollapse(false);
   };
 
+  const ProyectsScrooll = () => {
+    if (proyectsRef.current) {
+      proyectsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Box component='header' sx={style.container}>
       <Box component='nav' sx={style.toolbar}>
         <Typography variant='h5' sx={{ fontWeight: 700, letterSpacing: '1px' }}>
           {t('header.titleHeader')}
         </Typography>
+        {!matches && (
+          <Stack direction='row' spacing={2}>
+            <Typography
+              sx={{
+                color: 'white',
+                textDecoration: 'none',
+                cursor: 'pointer',
+              }}
+              onClick={ProyectsScrooll}
+            >
+              Proyectos
+            </Typography>
+            <Typography
+              sx={{ color: 'white', textDecoration: 'none', cursor: 'pointer' }}
+            >
+              Contacto
+            </Typography>
+          </Stack>
+        )}
         <div style={{ display: 'flex' }}>
           {matches ? (
             <Box>
               <Stack direction='row' spacing={1}>
                 <Theme />
                 <IconButton onClick={() => setOpenDrawer(!openDrawer)}>
-                  <Menu  color='primary'/>
+                  <Menu color='primary' />
                 </IconButton>
               </Stack>
             </Box>

@@ -13,7 +13,13 @@ import {
   Divider,
   Theme,
 } from '@mui/material';
-import { Download, LinkedIn, GitHub, Facebook } from '@mui/icons-material';
+import {
+  Download,
+  LinkedIn,
+  GitHub,
+  Facebook,
+  Instagram,
+} from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
 import { Items } from './type';
 import { Certifications } from '../Certifications';
@@ -21,6 +27,7 @@ import { Header } from '../../components/Header';
 import { AboutMe } from '../AboutMe';
 import { useTranslation } from '@translations';
 import photo from '../../assets/png/photo.jpg';
+import { Proyects } from '../Proyects';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -29,6 +36,7 @@ const Home = () => {
   const matches = useMediaQuery(theme.breakpoints.down('md'));
   const style = useHomeStyles();
   const aboutMeRef = useRef<HTMLDivElement | null>(null);
+  const proyectsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setShow(true);
@@ -56,12 +64,17 @@ const Home = () => {
       icon: <Facebook sx={style.icons} />,
       path: 'https://www.facebook.com/juan.veyita',
     },
+    {
+      name: 'Instagram',
+      icon: <Instagram sx={style.icons} />,
+      path: 'https://www.google.com',
+    },
   ];
 
   return (
     <Grid component='div' sx={{ flexDirection: 'column' }}>
       <Grid sx={style.container}>
-        <Header />
+        <Header proyectsRef={proyectsRef} />
         <Divider variant='middle' sx={style.rootDivider} />
         <Grid container sx={style.principalPage}>
           {matches && (
@@ -124,11 +137,7 @@ const Home = () => {
                 >
                   {t('home.downloadCv')}
                 </Button>
-                <Button
-                  variant='contained'
-                  onClick={AboutMeScrollTo}
-                  sx={{ color: (theme: Theme) => theme.palette.common.white }}
-                >
+                <Button variant='contained' onClick={AboutMeScrollTo}>
                   {t('home.aboutMe')}
                 </Button>
               </Stack>
@@ -158,13 +167,17 @@ const Home = () => {
           )}
         </Grid>
       </Grid>
-      <Divider variant='fullWidth' sx={style.rootDivider}/>
+      <Divider variant='fullWidth' sx={style.rootDivider} />
       <Grid sx={{ mb: 8, mt: 8 }} ref={aboutMeRef}>
         <AboutMe />
       </Grid>
       <Divider variant='middle' sx={style.rootDivider} />
-      <Grid sx={{ mb: 20, mt: 8 }}>
+      <Grid sx={{ mb: 10, mt: 8 }}>
         <Certifications />
+      </Grid>
+      <Divider variant='middle' sx={style.rootDivider} />
+      <Grid sx={{ mb: 20, mt: 8 }} ref={proyectsRef}>
+        <Proyects />
       </Grid>
     </Grid>
   );

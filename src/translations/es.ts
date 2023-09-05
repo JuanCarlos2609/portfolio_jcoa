@@ -47,4 +47,10 @@ export const es = {
   certifications: {
     title: '        Certificados - Cursos - Logros',
   },
+
+  projects: {
+    title: 'Proyectos',
+    instagram: 'Clon de instragram',
+    visit: 'Visitar',
+  },
 };

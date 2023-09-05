@@ -4,7 +4,7 @@ export const dark = {
     divider: '#132F4C',
     background: {
       default: '#001E3C',
-      paper: '#0A1929',
+      paper: '#222F3E', //0A1929
     },
     common: {
       black: '#161c24',

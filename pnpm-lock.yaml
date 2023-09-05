@@ -23,9 +23,6 @@ dependencies:
   '@mui/material':
     specifier: ^5.14.5
     version: 5.14.5(@emotion/react@11.11.1)(@emotion/styled@11.11.0)(@types/react@18.2.15)(react-dom@18.2.0)(react@18.2.0)
-  '@react-symbols/icons':
-    specifier: ^1.2.2
-    version: 1.2.2(react-dom@18.2.0)(react@18.2.0)
   axios:
     specifier: ^1.4.0
     version: 1.4.0
@@ -2284,16 +2281,6 @@ packages:
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-    dev: false
-
-  /@react-symbols/icons@1.2.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-+cdTPNGrGj1CSz9ZmYz9MP3vYTXM7Q5VlgX/Woswbhh9XU/M6jPpxKUPHFhCZRgIP3qpyKiz2gS2ekreKYBRZw==}
-    peerDependencies:
-      react: '>=16.8.0'
-      react-dom: '>=16.8.0'
-    dependencies:
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@remix-run/router@1.7.2:

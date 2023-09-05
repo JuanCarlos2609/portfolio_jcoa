@@ -16,7 +16,6 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/lab": "5.0.0-alpha.141",
     "@mui/material": "^5.14.5",
-    "@react-symbols/icons": "^1.2.2",
     "axios": "^1.4.0",
     "formik": "^2.4.2",
     "i18next": "^23.4.4",

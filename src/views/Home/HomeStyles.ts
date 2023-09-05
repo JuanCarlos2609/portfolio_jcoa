@@ -64,7 +64,7 @@ export const useHomeStyles = () => {
 
   const objetiveText = {
     mt: { xs: 3, md: 6 },
-    mb: { xs: 10, md: 6 },
+    mb: { xs: 8, md: 6 },
     letterSpacing: '0.5px',
     fontWeight: 400,
     fontSize: { xs: '17px', sm: '20px', md: '20px' },
@@ -75,7 +75,8 @@ export const useHomeStyles = () => {
   const actionButtons = {
     display: 'flex',
     justifyContent: { xs: 'center', md: 'start' },
-    mt: { xs: 3, md: 6 },
+    pt: { xs: 0, md: 6 },
+    pb: 10,
   };
 
   const avatar = {
