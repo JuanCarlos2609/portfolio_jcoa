@@ -45,12 +45,15 @@ export const es = {
       'Desarrollo de software que se encarga de administrar equipos médicos; de los hospitales y ambulancias.',
   },
   certifications: {
-    title: '        Certificados - Cursos - Logros',
+    title: 'Certificados - Cursos - Logros',
   },
 
   projects: {
     title: 'Proyectos',
     instagram: 'Clon de instragram',
+    instagramDescription:
+      'Es un clon de la pantalla principal de la red social Instagram, utilizando los conceptos básicos de React Js y Material Ui v4',
+
     visit: 'Visitar',
   },
 };

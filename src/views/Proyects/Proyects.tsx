@@ -5,7 +5,6 @@ import {
   CardContent,
   CardMedia,
   Grid,
-  Theme,
   Typography,
 } from '@mui/material';
 import { useProyectsStyles } from './ProyectsStyles';
@@ -25,7 +24,11 @@ const Proyects = () => {
       <Grid container spacing={2}>
         {proyects.map((item, index) => (
           <Grid item xs={12} md={6} key={`${index}-${item.name}`}>
-            <Card sx={{ boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.5)' }}>
+            <Card
+              sx={{
+                boxShadow: '0px 2px 6px rgba(0, 0, 0, 0.5)',
+              }}
+            >
               <CardMedia component='img' src={item.img} />
               <CardContent>
                 <Typography variant='h6' sx={{ textTransform: 'capitalize' }}>

@@ -15,7 +15,7 @@ export const useHelpers = () => {
     {
       name: t('projects.instagram'),
       img: instagramImage,
-      description: 'Eso es una breve descripción del proyecto',
+      description: t('projects.instagramDescription'),
       siteWeb: 'https://instagram-clone-juancarlos.netlify.app',
     },
     {

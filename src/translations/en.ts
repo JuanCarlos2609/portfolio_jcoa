@@ -50,6 +50,7 @@ export const en = {
   projects: {
     title: 'Projects',
     instagram: 'Instragram Clone',
+    instagramDescription: '',
     visit: 'Visit',
   },
 };
