@@ -11,15 +11,8 @@ import {
   useMediaQuery,
   useTheme,
   Divider,
-  Theme,
 } from '@mui/material';
-import {
-  Download,
-  LinkedIn,
-  GitHub,
-  Facebook,
-  Instagram,
-} from '@mui/icons-material';
+import { Download, LinkedIn, GitHub } from '@mui/icons-material';
 import { useHomeStyles } from './HomeStyles';
 import { Items } from './type';
 import { Certifications } from '../Certifications';
@@ -58,16 +51,6 @@ const Home = () => {
       name: 'Github',
       icon: <GitHub sx={style.icons} />,
       path: 'https://github.com/JuanCarlos2609',
-    },
-    {
-      name: 'Facebook',
-      icon: <Facebook sx={style.icons} />,
-      path: 'https://www.facebook.com/juan.veyita',
-    },
-    {
-      name: 'Instagram',
-      icon: <Instagram sx={style.icons} />,
-      path: 'https://www.google.com',
     },
   ];
 
