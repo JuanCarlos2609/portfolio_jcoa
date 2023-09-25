@@ -16,8 +16,8 @@ const getItem = (keyName: string): any => {
   if (value !== null && (_.get(value, 0) === '[' || _.get(value, 0) === '{'))
     value = JSON.parse(value);
 
-  if (value === 'true') value = value.toString(); // Convertir a cadena
-  if (value === 'false') value = value.toString(); // Convertir a cadena
+  if (value === 'true') value = value.toString();
+  if (value === 'false') value = value.toString();
 
   return value;
 };

@@ -22,7 +22,7 @@ export const useHomeStyles = () => {
   const principalPage = {
     pl: { xs: '15px', md: '30px' },
     pr: { xs: '15px', md: '30px' },
-    pt: '30px',
+    pt: 10,
   };
 
   const contentAvatar = {

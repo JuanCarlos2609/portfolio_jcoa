@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Box,
   Collapse,
@@ -17,9 +17,10 @@ import { Drawer } from '../Drawer';
 import { LanguageSelector } from '../Language';
 import { Theme } from '../Theme';
 import { useTranslation } from '@translations';
-import { HeaderStyles } from './HeaderStyles';
+import { useHeaderStyles } from './HeaderStyles';
 import { languages } from '../../translations/i18n';
-import { Link } from 'react-router-dom';
+// import logoDark from '../../assets/png/logo-dark.png';
+// import logoLight from '../../assets/png/logo-light.png';
 
 interface HeaderProps {
   proyectsRef: any;
@@ -28,11 +29,12 @@ interface HeaderProps {
 const Header = ({ proyectsRef }: HeaderProps) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.down('sm'));
-  const style = HeaderStyles;
   const { t } = useTranslation();
   const { language, changeLanguage } = useTranslation();
+  const [scrolled, setScrolled] = useState<boolean>(false);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
   const [collapse, setCollapse] = useState<boolean>(false);
+  const style = useHeaderStyles({ scrolled });
 
   const handleSelectLanguage = (language: string) => {
     changeLanguage(language);
@@ -46,6 +48,22 @@ const Header = ({ proyectsRef }: HeaderProps) => {
       proyectsRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <Box component='header' sx={style.container}>

@@ -1,3 +1,5 @@
+import { Theme } from '@mui/material';
+
 export const useCertificationsStyles = () => {
   const container = {
     pt: '20px',

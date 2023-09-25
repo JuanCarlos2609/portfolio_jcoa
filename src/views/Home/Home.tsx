@@ -58,7 +58,7 @@ const Home = () => {
     <Grid component='div' sx={{ flexDirection: 'column' }}>
       <Grid sx={style.container}>
         <Header proyectsRef={proyectsRef} />
-        <Divider variant='middle' sx={style.rootDivider} />
+        {/* <Divider variant='middle' sx={style.rootDivider} /> */}
         <Grid container sx={style.principalPage}>
           {matches && (
             <Grid item xs={12} sx={{ flexDirection: 'column', mt: 10 }}>

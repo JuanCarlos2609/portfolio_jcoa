@@ -1,9 +1,8 @@
 export const useProyectsStyles = () => {
   const container = {
-    pl: { xs: '15px', md: '30px' }, //30
-    pr: { xs: '15px', md: '30px' },
-    pt: '10px',
-    mb: '30px',
+    ml: { xs: 2, sm: 8, md: 20 },
+    mr: { xs: 2, sm: 8, md: 20 },
+    mt: 8,
   };
 
   const title = {
@@ -14,5 +13,9 @@ export const useProyectsStyles = () => {
     mb: 3,
   };
 
-  return { container, title };
+  const text = {
+    textTransform: 'capitalize',
+  };
+
+  return { container, title, text };
 };
