@@ -159,9 +159,9 @@ const Home = () => {
         <Certifications />
       </Grid>
       <Divider variant='middle' sx={style.rootDivider} />
-      <Grid sx={{ mb: 20, mt: 8 }} ref={proyectsRef}>
+      {/* <Grid sx={{ mb: 20, mt: 8 }} ref={proyectsRef}>
         <Proyects />
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };

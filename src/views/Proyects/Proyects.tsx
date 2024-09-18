@@ -1,21 +1,9 @@
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Grid,
-  Theme,
-  Typography,
-} from '@mui/material';
+import { Card, Grid, Theme, Typography } from '@mui/material';
 import { useProyectsStyles } from './ProyectsStyles';
-import { useHelpers } from './helpers';
-import { GitHub, Pageview } from '@mui/icons-material';
 import { useTranslation } from '@translations';
 
 const Proyects = () => {
   const { t } = useTranslation();
-  const { proyects } = useHelpers();
   const style = useProyectsStyles();
 
   return (

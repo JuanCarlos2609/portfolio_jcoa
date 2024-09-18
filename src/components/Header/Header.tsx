@@ -71,7 +71,7 @@ const Header = ({ proyectsRef }: HeaderProps) => {
         <Typography variant='h5' sx={{ fontWeight: 700, letterSpacing: '1px' }}>
           {t('header.titleHeader')}
         </Typography>
-        {!matches && (
+        {/* {!matches && (
           <Stack direction='row' spacing={2}>
             <Typography
               sx={{
@@ -89,7 +89,7 @@ const Header = ({ proyectsRef }: HeaderProps) => {
               Contacto
             </Typography>
           </Stack>
-        )}
+        )} */}
         <div style={{ display: 'flex' }}>
           {matches ? (
             <Box>
