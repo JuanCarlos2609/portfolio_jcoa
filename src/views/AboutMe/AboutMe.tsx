@@ -18,6 +18,11 @@ const AboutMe = () => {
 
   const workCompanies = [
     {
+      companyName: t('aboutMe.fourthCompanyName'),
+      position: t('aboutMe.fourthPosition'),
+      description: t('aboutMe.fourthDescription'),
+    },
+    {
       companyName: t('aboutMe.fristCompanyName'),
       position: t('aboutMe.fristPosition'),
       description: t('aboutMe.fristDescription'),

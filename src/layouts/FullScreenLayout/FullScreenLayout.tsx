@@ -1,10 +1,8 @@
 import { ReactNode } from 'react';
 import { Box, Fab } from '@mui/material';
-import { Header } from '../../components/Header';
 import { StylesFullScreenLAyout } from './StylesFullScreenLayout';
 import { ScrollTop } from '../../components/ScrollTop';
 import { KeyboardArrowUp } from '@mui/icons-material';
-import { LanguageSelector } from '../../components/Language';
 
 interface Props {
   children: ReactNode;

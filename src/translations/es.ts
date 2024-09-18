@@ -18,6 +18,8 @@ export const es = {
     profession: 'Desarrollador Frontend',
     downloadCv: 'Descargar CV',
     aboutMe: 'Sobre mí',
+    description:
+      'Gran capacidad de adaptación a las nuevas tecnologías y paradigmas, proporcionando soluciones efectivas. Continua capacitación y formación de habilidades autodidactas que permitan la expansión de conocimientos técnicos en mi profesión.',
   },
   drawer: {
     titleDrawer: 'Menú',
@@ -43,6 +45,11 @@ export const es = {
     thirdPosition: 'Ingeniero de Desarrollo',
     thirdDescription:
       'Desarrollo de software que se encarga de administrar equipos médicos; de los hospitales y ambulancias.',
+
+    fourthCompanyName: 'Disrupting',
+    fourthPosition: 'Desarrollador frontend y fullstack',
+    fourthDescription:
+      'Desarrollo de paginas web y web responsivo para clientes como Michelin y CBRE - México.',
   },
   certifications: {
     title: 'Certificados - Cursos - Logros',

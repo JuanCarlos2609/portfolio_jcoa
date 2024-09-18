@@ -10,6 +10,7 @@ import {
   Stack,
   useMediaQuery,
   useTheme,
+  Theme as ThemeMUI,
   Typography,
 } from '@mui/material';
 import { ExpandLess, ExpandMore, Menu, Translate } from '@mui/icons-material';
@@ -43,11 +44,11 @@ const Header = ({ proyectsRef }: HeaderProps) => {
     setCollapse(false);
   };
 
-  const ProyectsScrooll = () => {
-    if (proyectsRef.current) {
-      proyectsRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // const ProyectsScrooll = () => {
+  //   if (proyectsRef.current) {
+  //     proyectsRef.current.scrollIntoView({ behavior: 'smooth' });
+  //   }
+  // };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -68,7 +69,7 @@ const Header = ({ proyectsRef }: HeaderProps) => {
   return (
     <Box component='header' sx={style.container}>
       <Box component='nav' sx={style.toolbar}>
-        <Typography variant='h5' sx={{ fontWeight: 700, letterSpacing: '1px' }}>
+        <Typography variant='h5' sx={style.titleNav}>
           {t('header.titleHeader')}
         </Typography>
         {/* {!matches && (

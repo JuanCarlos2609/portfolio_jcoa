@@ -18,6 +18,8 @@ export const en = {
     profession: 'Frontend Developer',
     downloadCv: 'Download CV',
     aboutMe: 'About Me',
+    description:
+      'Great capacity to adapt to new technologies and paradigms, providing effective solutions. Continue training and formation of self-taught skills that allow the expansion of technical knowledge in my profession.',
   },
   drawer: {
     titleDrawer: 'Menu',
@@ -43,6 +45,10 @@ export const en = {
     thirdPosition: 'Development Engineer',
     thirdDescription:
       'Development of software that is responsible for managing medical equipment in hospitals and ambulances.',
+    fourthCompanyName: 'Disrupting',
+    fourthPosition: 'Frontend and fullstack developer',
+    fourthDescription:
+      'Development of websites and responsive websites for clients such as Michelin and CBRE - Mexico.',
   },
   certifications: {
     title: 'Certificates - Courses - Achievements',

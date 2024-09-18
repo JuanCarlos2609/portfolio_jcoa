@@ -20,7 +20,7 @@ import { Header } from '../../components/Header';
 import { AboutMe } from '../AboutMe';
 import { useTranslation } from '@translations';
 import photo from '../../assets/png/photo.jpg';
-import { Proyects } from '../Proyects';
+// import { Proyects } from '../Proyects';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -99,10 +99,7 @@ const Home = () => {
                 {t('home.profession')}
               </Typography>
               <Typography sx={style.objetiveText} variant='h6'>
-                Gran capacidad de adaptación a las nuevas tecnologías y
-                paradigmas, proporcionando soluciones efectivas. Continua
-                capacitación y formación de habilidades autodidactas que
-                permitan la expansión de conocimientos técnicos en mi profesión.
+                {t('home.description')}
               </Typography>
 
               <Stack
@@ -158,8 +155,8 @@ const Home = () => {
       <Grid sx={{ mb: 10, mt: 8 }}>
         <Certifications />
       </Grid>
-      <Divider variant='middle' sx={style.rootDivider} />
-      {/* <Grid sx={{ mb: 20, mt: 8 }} ref={proyectsRef}>
+      {/* <Divider variant='middle' sx={style.rootDivider} />
+      <Grid sx={{ mb: 20, mt: 8 }} ref={proyectsRef}>
         <Proyects />
       </Grid> */}
     </Grid>

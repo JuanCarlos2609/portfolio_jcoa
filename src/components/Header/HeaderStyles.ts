@@ -25,5 +25,11 @@ export const useHeaderStyles = ({ scrolled }: HeaderStylesProps) => {
     alignItems: 'center',
   };
 
-  return { container, toolbar };
+  const titleNav = {
+    color: (theme: Theme) => theme.palette.common.white,
+    fontWeight: 700,
+    letterSpacing: '1px',
+  };
+
+  return { container, toolbar, titleNav };
 };

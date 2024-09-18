@@ -13,13 +13,19 @@ import awsIcon from '../../assets/svg/aws.svg';
 import postmanIcon from '../../assets/svg/postman.svg';
 import yarnIcon from '../../assets/svg/yarn.svg';
 import nodeIcon from '../../assets/svg/nodejs.svg';
+import azureIcon from '../../assets/svg/azure.svg';
+import postgresIcon from '../../assets/svg/postgres.svg';
+import tailwindIcon from '../../assets/svg/tailwind.svg';
+import bootstrapIcon from '../../assets/svg/bootstrap.svg';
+import figmaIcon from '../../assets/svg/figma.svg';
+import adobeIcon from '../../assets/svg/adobe-xd.svg';
 
-interface icons {
+interface Icons {
   icon: string;
   name: string;
 }
 
-export const skillsArray: icons[] = [
+export const skillsArray: Icons[] = [
   {
     icon: htmlIcon,
     name: 'Html',
@@ -53,12 +59,24 @@ export const skillsArray: icons[] = [
     name: 'Maaterial-Ui',
   },
   {
+    icon: tailwindIcon,
+    name: 'Tailwind css',
+  },
+  {
+    icon: bootstrapIcon,
+    name: 'Bootstrap 5',
+  },
+  {
     icon: viteIcon,
     name: 'Vite',
   },
   {
     icon: eslintIcon,
     name: 'Eslint',
+  },
+  {
+    icon: azureIcon,
+    name: 'Azure',
   },
   {
     icon: awsIcon,
@@ -79,5 +97,17 @@ export const skillsArray: icons[] = [
   {
     icon: postmanIcon,
     name: 'Postman',
+  },
+  {
+    icon: postgresIcon,
+    name: 'Postgres',
+  },
+  {
+    icon: figmaIcon,
+    name: 'Figma',
+  },
+  {
+    icon: adobeIcon,
+    name: 'Adobe Xd',
   },
 ];
